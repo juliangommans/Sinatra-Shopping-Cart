@@ -1,0 +1,49 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="../public/centerss/application.css">
+</head>
+
+<table>
+	<tr>
+	<td>
+		<h1> Welcome to your shopping cart </h1>
+	</td>
+	<td>
+			<% if @session%>
+				<form action='/logout' method='post'>
+					<input class='logout' type='submit' value='Log Out'>
+				</form>
+				<form action='/products' method='get'>
+					<input class='product' type='submit' value='View Products'>
+				</form>
+			<% end %> 
+	</td>
+	</tr>
+</table>
+<table >
+	<tr>
+		<td class='items'><h3>Product Name</h3></td>
+		<td class='items'><h3>Price</h3></td></td>
+	</tr>
+
+ 	<% @items.each do |item| %>
+	<tr>
+		<td class='items'><p><a href='/products/<%=item.item_name%>'>  <%="#{item.item_name}: " %></a><p>
+		<td class='items'><p>$<%= item.item_price %></p></td>
+		<td><form action='/remove/<%=item.id%>' method='post'>
+				<input type='submit' value='Remove Item from Cart'>
+			</form>
+		</td>
+	</tr>
+	<%end%>
+
+	<tr>
+		<td class='items'> <h2>Total </h2> </td>
+		<td class='items'><p> $<%= @total %></p></td>
+		<td><form action='/buy' method='post'>
+				<input type='submit' value='Comfirm Purchase'>
+			</form>
+		</td>
+	</tr>
+	</tr>
+
+</table>

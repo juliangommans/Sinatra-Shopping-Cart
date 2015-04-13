@@ -1,0 +1,14 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="../public/centerss/application.css">
+</head>
+
+<p> Please create your account by filling in the following details. </p>
+
+	<%= @validation %>
+
+<form action='/signup' method='post'>
+	<input type='text' placeholder='Username' name='username'>
+	<input type='password' placeholder='password' name='password1'>
+	<input type='password' placeholder='password' name='password2'>
+	<input type='submit' value='Sign Up'>
+</form>

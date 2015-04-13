@@ -1,0 +1,19 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="../public/centerss/application.css">
+</head>
+
+<h1> JUST BECAUSE </h1>
+
+<a href='/products'> Click here to look at the available products </a>
+
+<% if @session%>
+	<form action='/logout' method='post'>
+		<input class='logout' type='submit' value='Log Out'>
+	</form>
+	<form action='/cart' method='get'>
+		<input class='cart' type='submit' value='View your cart'>
+	</form>
+	<form action='/products' method='get'>
+		<input class='product' type='submit' value='View Products'>
+	</form>
+<% end %>

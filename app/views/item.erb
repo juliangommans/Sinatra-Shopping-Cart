@@ -1,0 +1,21 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="../public/centerss/application.css">
+</head>
+
+<h1> <%= @item.item_name %> </h1>
+
+<h3> $<%= @item.item_price %> </h3>
+
+<p> <%= @item.description %> </p>
+
+<% if @session%>
+	<form action='/logout' method='post'>
+		<input class='logout' type='submit' value='Log Out'>
+	</form>
+	<form action='/cart' method='get'>
+		<input class='cart' type='submit' value='View your cart'>
+	</form>
+	<form action='/products' method='get'>
+		<input class='product' type='submit' value='View Products'>
+	</form>
+<% end %> 
